@@ -39,13 +39,13 @@ const isFileNotFound = err => err && err.code === 'ENOENT';
 
 const makeDoneHandlers = (callback, content, rest) => ({
   failed: e => callback(e),
-  success: () => callback(null, content, ...rest)
+  success: () => callback(null, content, ...rest),
 });
 
 const makeFileHandlers = filename => ({
   read: handler => fs.readFile(filename, { encoding: 'utf-8' }, handler),
   write: (content, handler) =>
-    fs.writeFile(filename, content, { encoding: 'utf-8' }, handler)
+    fs.writeFile(filename, content, { encoding: 'utf-8' }, handler),
 });
 
 module.exports = function(content, ...rest) {
@@ -79,7 +79,7 @@ module.exports = function(content, ...rest) {
       if (isFileNotFound(err)) {
         return failed(
           getNoDeclarationFileError({
-            filename: cssModuleInterfaceFilename
+            filename: cssModuleInterfaceFilename,
           })
         );
       }
@@ -93,7 +93,7 @@ module.exports = function(content, ...rest) {
           getTypeMismatchError({
             filename: cssModuleInterfaceFilename,
             expected: cssModuleDefinition,
-            actual: fileContents
+            actual: fileContents,
           })
         );
       }
