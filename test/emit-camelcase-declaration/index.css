@@ -1,0 +1,11 @@
+.valid-class {
+  position: relative;
+}
+
+.some--class {
+  position: relative;
+}
+
+.other__class {
+  display: block;
+}

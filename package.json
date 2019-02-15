@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/seek-oss/css-modules-typescript-loader#readme",
   "dependencies": {
+    "camelcase": "^5.0.0",
     "line-diff": "^2.0.1"
   },
   "devDependencies": {
